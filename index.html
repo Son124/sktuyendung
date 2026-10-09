@@ -850,6 +850,294 @@
       gap: 16px;
     }
 
+    /* HỆ THỐNG BỘ LỊCH CHUYÊN DỤNG (TỐI ƯU TRẢI NGHIỆM CHO MOBILE & WEB) */
+    .date-picker-box {
+      background: #f8fafc;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 12px;
+      padding: 14px;
+    }
+
+    .date-input-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      cursor: pointer;
+    }
+
+    .date-input-col {
+      flex: 1;
+    }
+
+    .custom-date-trigger {
+      position: relative;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .custom-date-trigger input {
+      cursor: pointer !important;
+      padding-left: 42px !important;
+      background-color: #ffffff !important;
+      font-weight: 700;
+      color: #0f172a;
+      border: 1.5px solid #cbd5e1;
+    }
+
+    .custom-date-trigger input:hover {
+      border-color: #dc2626;
+    }
+
+    .custom-date-trigger .cal-icon-prefix {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 18px;
+      pointer-events: none;
+    }
+
+    .date-preview-badge {
+      background: #eff6ff;
+      border: 1.5px solid #bfdbfe;
+      color: #1e40af;
+      padding: 6px 10px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-width: 105px;
+      height: 48px;
+      flex-shrink: 0;
+    }
+
+    .date-preview-badge .badge-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #3b82f6;
+      line-height: 1;
+    }
+
+    .date-preview-badge strong {
+      font-size: 13.5px;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-top: 2px;
+      white-space: nowrap;
+    }
+
+    .date-quick-pills {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+      padding-top: 10px;
+      border-top: 1px dashed #cbd5e1;
+    }
+
+    .date-pill-btn {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 8px 4px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #334155;
+      cursor: pointer;
+      transition: all 0.15s;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .date-pill-btn:hover, .date-pill-btn:active {
+      background: #eff6ff;
+      color: #1d4ed8;
+      border-color: #93c5fd;
+    }
+
+    /* MODAL LỊCH CHUYÊN DỤNG (HIỂN THỊ CHUẨN ĐẸP TRÊN MỌI DÒNG ĐIỆN THOẠI) */
+    .calendar-modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(4px);
+      z-index: 10000;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .calendar-modal-overlay.active {
+      display: flex;
+    }
+
+    .calendar-card {
+      background: #ffffff;
+      width: 100%;
+      max-width: 350px;
+      border-radius: 20px;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      animation: calPopIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      border: 1px solid #e2e8f0;
+    }
+
+    @keyframes calPopIn {
+      from { transform: scale(0.92); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .calendar-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 18px 12px;
+      border-bottom: 1px solid #f1f5f9;
+      background: #ffffff;
+    }
+
+    .calendar-month-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .calendar-nav-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid #e2e8f0;
+      background: #f8fafc;
+      color: #334155;
+      font-size: 16px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .calendar-nav-btn:hover {
+      background: #fee2e2;
+      color: #dc2626;
+      border-color: #fca5a5;
+    }
+
+    .calendar-weekdays {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      padding: 12px 14px 6px;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: #64748b;
+      text-transform: uppercase;
+    }
+
+    .calendar-days-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+      padding: 4px 14px 16px;
+    }
+
+    .cal-day-cell {
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: 600;
+      border-radius: 50%;
+      cursor: pointer;
+      color: #1e293b;
+      transition: all 0.15s;
+      user-select: none;
+    }
+
+    .cal-day-cell:hover:not(.disabled):not(.empty) {
+      background: #fee2e2;
+      color: #b91c1c;
+    }
+
+    .cal-day-cell.today {
+      border: 1.5px solid #dc2626;
+      font-weight: 800;
+    }
+
+    .cal-day-cell.selected {
+      background: #dc2626 !important;
+      color: #ffffff !important;
+      font-weight: 800;
+      box-shadow: 0 4px 10px rgba(220, 38, 38, 0.4);
+      transform: scale(1.06);
+    }
+
+    .cal-day-cell.disabled {
+      color: #cbd5e1;
+      cursor: not-allowed;
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    .cal-day-cell.empty {
+      cursor: default;
+      pointer-events: none;
+    }
+
+    /* ĐÁY LỊCH: ĐẶT LẠI VÀ XONG NẰM NGANG NHAU CHUẨN ĐẸP */
+    .calendar-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 18px 14px;
+      border-top: 1px solid #f1f5f9;
+      background: #f8fafc;
+    }
+
+    .btn-cal-reset {
+      background: none;
+      border: none;
+      color: #64748b;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: all 0.15s;
+    }
+
+    .btn-cal-reset:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+
+    .btn-cal-done {
+      background: #16a34a;
+      border: 1.5px solid #15803d;
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 800;
+      cursor: pointer;
+      padding: 8px 24px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(22, 163, 74, 0.3);
+      transition: all 0.15s;
+    }
+
+    .btn-cal-done:hover, .btn-cal-done:active {
+      background: #15803d;
+      box-shadow: 0 4px 10px rgba(22, 163, 74, 0.4);
+      transform: translateY(-1px);
+    }
+
     /* HỆ THỐNG CHỌN GIỜ ĐỊNH DẠNG 24H (TỪ 08:00 ĐẾN 17:00) */
     .time-24h-picker-box {
       background: #f8fafc;
@@ -861,47 +1149,98 @@
     .time-select-row {
       display: flex;
       align-items: flex-end;
-      gap: 10px;
+      gap: 8px;
     }
 
     .time-select-col {
       flex: 1;
+      min-width: 0;
     }
 
     .time-col-title {
       display: block;
       font-size: 12px;
-      font-weight: 700;
-      color: #64748b;
-      margin-bottom: 5px;
+      font-weight: 800;
+      color: #475569;
+      margin-bottom: 6px;
       text-transform: uppercase;
       letter-spacing: 0.3px;
     }
 
-    .time-sep {
-      font-size: 24px;
+    /* KHUNG HIỂN THỊ CHỌN GIỜ TRỰC QUAN (CHỮ ĐẬM 100%, KHÔNG BAO GIỜ BỊ ẨN TRÊN IOS/ANDROID) */
+    .time-picker-custom-btn {
+      position: relative;
+      background: #ffffff;
+      border: 1.5px solid #94a3b8;
+      border-radius: 10px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .time-picker-custom-btn:hover {
+      border-color: #dc2626;
+      background: #fff1f2;
+    }
+
+    .time-btn-val {
+      font-size: 16px;
       font-weight: 800;
+      color: #0f172a !important;
+      -webkit-text-fill-color: #0f172a !important;
+      text-align: center;
+      flex: 1;
+      letter-spacing: 0.5px;
+    }
+
+    .time-btn-arrow {
+      font-size: 13px;
       color: #64748b;
-      padding-bottom: 10px;
+      margin-left: 2px;
+    }
+
+    .time-native-select {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+      -webkit-appearance: none;
+      z-index: 2;
+    }
+
+    .time-sep {
+      font-size: 22px;
+      font-weight: 900;
+      color: #64748b;
+      padding-bottom: 12px;
+      flex-shrink: 0;
     }
 
     .time-preview-badge {
       background: #fee2e2;
       border: 1.5px solid #fecaca;
       color: #991b1b;
-      padding: 8px 12px;
+      padding: 6px 10px;
       border-radius: 10px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-width: 85px;
+      min-width: 82px;
       height: 48px;
+      flex-shrink: 0;
     }
 
     .time-preview-badge .badge-label {
       font-size: 10px;
-      font-weight: 700;
+      font-weight: 800;
       text-transform: uppercase;
       color: #b91c1c;
       line-height: 1;
@@ -909,8 +1248,10 @@
 
     .time-preview-badge strong {
       font-size: 17px;
-      font-weight: 800;
+      font-weight: 900;
       line-height: 1.2;
+      color: #991b1b !important;
+      -webkit-text-fill-color: #991b1b !important;
     }
 
     .time-hint {
@@ -1787,8 +2128,30 @@
           <!-- Ngày & Giờ phỏng vấn (ĐỊNH DẠNG 24H TỪ 08:00 ĐẾN 17:00) -->
           <div class="form-row">
             <div class="form-group">
-              <label for="interviewDate">Chọn ngày phỏng vấn: <span class="required">*</span></label>
-              <input type="date" id="interviewDate" class="form-control" required>
+              <label for="interviewDateDisplay">Chọn ngày phỏng vấn: <span class="required">*</span></label>
+              
+              <div class="date-picker-box">
+                <div class="date-input-row" onclick="openCalendarModal()" title="Bấm để mở lịch chọn ngày">
+                  <div class="date-input-col">
+                    <div class="custom-date-trigger">
+                      <span class="cal-icon-prefix">📅</span>
+                      <input type="text" id="interviewDateDisplay" class="form-control" readonly placeholder="Bấm vào để chọn ngày..." required>
+                      <input type="hidden" id="interviewDate" name="interviewDate" required>
+                    </div>
+                  </div>
+                  <div class="date-preview-badge" id="datePreviewBadge">
+                    <span class="badge-label">Lịch hẹn</span>
+                    <strong id="dateBadgeText">Chưa chọn</strong>
+                  </div>
+                </div>
+
+                <!-- CÁC NÚT CHỌN NHANH NGÀY ĐI PHỎNG VẤN TIỆN LỢI CHO ỨNG VIÊN -->
+                <div class="date-quick-pills">
+                  <button type="button" class="date-pill-btn" onclick="selectQuickDay(0)">⚡ Hôm nay</button>
+                  <button type="button" class="date-pill-btn" onclick="selectQuickDay(1)">⚡ Ngày mai</button>
+                  <button type="button" class="date-pill-btn" onclick="selectQuickDay(2)">⚡ Ngày kia</button>
+                </div>
+              </div>
             </div>
 
             <div class="form-group">
@@ -1798,38 +2161,46 @@
                 <div class="time-select-row">
                   <div class="time-select-col">
                     <span class="time-col-title">Giờ (24h)</span>
-                    <select id="interviewHour" class="form-control" onchange="updateTimeSelection()">
-                      <option value="08">08:00</option>
-                      <option value="09">09:00</option>
-                      <option value="10">10:00</option>
-                      <option value="11">11:00</option>
-                      <option value="12">12:00</option>
-                      <option value="13">13:00</option>
-                      <option value="14">14:00</option>
-                      <option value="15">15:00</option>
-                      <option value="16">16:00</option>
-                      <option value="17">17:00</option>
-                    </select>
+                    <div class="time-picker-custom-btn">
+                      <span class="time-btn-val" id="hourDisplayVal">08:00</span>
+                      <span class="time-btn-arrow">▾</span>
+                      <select id="interviewHour" class="time-native-select" onchange="updateTimeSelection()">
+                        <option value="08">08:00</option>
+                        <option value="09">09:00</option>
+                        <option value="10">10:00</option>
+                        <option value="11">11:00</option>
+                        <option value="12">12:00</option>
+                        <option value="13">13:00</option>
+                        <option value="14">14:00</option>
+                        <option value="15">15:00</option>
+                        <option value="16">16:00</option>
+                        <option value="17">17:00</option>
+                      </select>
+                    </div>
                   </div>
 
                   <span class="time-sep">:</span>
 
                   <div class="time-select-col">
                     <span class="time-col-title">Phút</span>
-                    <select id="interviewMinute" class="form-control" onchange="updateTimeSelection()">
-                      <option value="00">00</option>
-                      <option value="05">05</option>
-                      <option value="10">10</option>
-                      <option value="15">15</option>
-                      <option value="20">20</option>
-                      <option value="25">25</option>
-                      <option value="30">30</option>
-                      <option value="35">35</option>
-                      <option value="40">40</option>
-                      <option value="45">45</option>
-                      <option value="50">50</option>
-                      <option value="55">55</option>
-                    </select>
+                    <div class="time-picker-custom-btn">
+                      <span class="time-btn-val" id="minuteDisplayVal">00</span>
+                      <span class="time-btn-arrow">▾</span>
+                      <select id="interviewMinute" class="time-native-select" onchange="updateTimeSelection()">
+                        <option value="00">00</option>
+                        <option value="05">05</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                        <option value="25">25</option>
+                        <option value="30">30</option>
+                        <option value="35">35</option>
+                        <option value="40">40</option>
+                        <option value="45">45</option>
+                        <option value="50">50</option>
+                        <option value="55">55</option>
+                      </select>
+                    </div>
                   </div>
 
                   <div class="time-preview-badge">
@@ -1907,6 +2278,31 @@
     </a>
   </div>
 
+  <!-- MODAL BỘ LỊCH CHUYÊN DỤNG (TỰ ĐỘNG NHẢY RA NGOÀI & CHỮ XONG CẠNH ĐẶT LẠI) -->
+  <div class="calendar-modal-overlay" id="calendarModal" onclick="handleCalendarOverlayClick(event)">
+    <div class="calendar-card" onclick="event.stopPropagation()">
+      <div class="calendar-header">
+        <button type="button" class="calendar-nav-btn" onclick="changeCalendarMonth(-1)">‹</button>
+        <div class="calendar-month-title" id="calMonthTitle">Tháng 10 năm 2026</div>
+        <button type="button" class="calendar-nav-btn" onclick="changeCalendarMonth(1)">›</button>
+      </div>
+
+      <div class="calendar-weekdays">
+        <span>T2</span><span>T3</span><span>T4</span><span>T5</span><span>T6</span><span>T7</span><span>CN</span>
+      </div>
+
+      <div class="calendar-days-grid" id="calDaysGrid">
+        <!-- Render ngày bằng JavaScript -->
+      </div>
+
+      <!-- ĐÁY LỊCH: NÚT ĐẶT LẠI VÀ CHỮ XONG NẰM NGANG NHAU 100% -->
+      <div class="calendar-footer">
+        <button type="button" class="btn-cal-reset" onclick="resetCalendarDate()">Đặt lại</button>
+        <button type="button" class="btn-cal-done" onclick="closeCalendarModal(true)">Xong</button>
+      </div>
+    </div>
+  </div>
+
   <!-- MODAL BÁO THÀNH CÔNG -->
   <div class="modal-overlay" id="successModal">
     <div class="modal-box">
@@ -1932,16 +2328,156 @@
     // CẤU HÌNH ĐƯỜNG LINK GOOGLE SHEETS CỦA BẠN NHUNG
     // Dán link Web App (Google Apps Script) mà bạn vừa triển khai vào giữa 2 dấu ngoặc kép:
     // =========================================================================
-    const GOOGLE_SCRIPT_URL = ""; 
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxYFwhzpZihdyrsB1kaI3lFs7Vv_ijD78PvvI-GM5BReXenTnslnxWZpz31vS3obqjSqw/exec"; 
 
-    // Thiết lập ngày phỏng vấn tối thiểu là ngày hôm nay
+    // Thiết lập ngày phỏng vấn và khởi tạo bộ lịch khi tải trang
     document.addEventListener("DOMContentLoaded", () => {
-      const today = new Date().toISOString().split('T')[0];
-      const dateInput = document.getElementById("interviewDate");
-      dateInput.min = today;
-      dateInput.value = today;
+      initCalendar();
       updateTimeSelection();
     });
+
+    // =========================================================================
+    // HỆ THỐNG BỘ LỊCH CHUYÊN DỤNG (TỰ ĐỘNG NHẢY RA NGOÀI & CHỮ XONG CẠNH ĐẶT LẠI)
+    // =========================================================================
+    let currentCalDate = new Date();
+    let selectedInterviewDate = new Date();
+
+    function initCalendar() {
+      const today = new Date();
+      currentCalDate = new Date(today.getFullYear(), today.getMonth(), 1);
+      selectedInterviewDate = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+      applySelectedDate(selectedInterviewDate);
+    }
+
+    function openCalendarModal() {
+      currentCalDate = new Date(selectedInterviewDate.getFullYear(), selectedInterviewDate.getMonth(), 1);
+      renderCalendar();
+      document.getElementById("calendarModal").classList.add("active");
+    }
+
+    function closeCalendarModal(scrollNext = true) {
+      document.getElementById("calendarModal").classList.remove("active");
+      if (scrollNext) {
+        const timeBox = document.querySelector(".time-24h-picker-box");
+        if (timeBox) {
+          timeBox.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      }
+    }
+
+    function handleCalendarOverlayClick(e) {
+      if (e.target.id === "calendarModal") {
+        closeCalendarModal(false);
+      }
+    }
+
+    function changeCalendarMonth(offset) {
+      currentCalDate.setMonth(currentCalDate.getMonth() + offset);
+      renderCalendar();
+    }
+
+    function renderCalendar() {
+      const monthTitle = document.getElementById("calMonthTitle");
+      const grid = document.getElementById("calDaysGrid");
+      if (!monthTitle || !grid) return;
+
+      const year = currentCalDate.getFullYear();
+      const month = currentCalDate.getMonth();
+
+      monthTitle.innerText = `Tháng ${month + 1} năm ${year}`;
+      grid.innerHTML = "";
+
+      const firstDayOfMonth = new Date(year, month, 1);
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+      let startDay = firstDayOfMonth.getDay() - 1;
+      if (startDay === -1) startDay = 6;
+
+      for (let i = 0; i < startDay; i++) {
+        const empty = document.createElement("div");
+        empty.className = "cal-day-cell empty";
+        grid.appendChild(empty);
+      }
+
+      const today = new Date();
+      const todayNorm = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+
+      for (let day = 1; day <= daysInMonth; day++) {
+        const cell = document.createElement("div");
+        cell.className = "cal-day-cell";
+        cell.innerText = day;
+
+        const cellDate = new Date(year, month, day);
+
+        if (cellDate < todayNorm) {
+          cell.classList.add("disabled");
+        } else {
+          if (cellDate.getTime() === todayNorm.getTime()) {
+            cell.classList.add("today");
+          }
+
+          if (selectedInterviewDate && 
+              cellDate.getFullYear() === selectedInterviewDate.getFullYear() &&
+              cellDate.getMonth() === selectedInterviewDate.getMonth() &&
+              cellDate.getDate() === selectedInterviewDate.getDate()) {
+            cell.classList.add("selected");
+          }
+
+          // KHI ỨNG VIÊN BẤM VÀO NGÀY: TỰ ĐỘNG CHỌN VÀ NHẢY RA NGOÀI NGAY LẬP TỨC (sau 180ms)
+          cell.onclick = () => {
+            selectCalendarDay(year, month, day);
+          };
+        }
+
+        grid.appendChild(cell);
+      }
+    }
+
+    function selectCalendarDay(year, month, day) {
+      selectedInterviewDate = new Date(year, month, day);
+      renderCalendar();
+      applySelectedDate(selectedInterviewDate);
+
+      // TỰ ĐỘNG NHẢY RA NGOÀI (ĐÓNG LỊCH) NGAY LẬP TỨC
+      setTimeout(() => {
+        closeCalendarModal(true);
+      }, 180);
+    }
+
+    function applySelectedDate(d) {
+      const yyyy = d.getFullYear();
+      const mm = String(d.getMonth() + 1).padStart(2, '0');
+      const dd = String(d.getDate()).padStart(2, '0');
+      const val = `${yyyy}-${mm}-${dd}`;
+
+      const hiddenInput = document.getElementById("interviewDate");
+      const displayInput = document.getElementById("interviewDateDisplay");
+      const badgeText = document.getElementById("dateBadgeText");
+
+      const daysOfWeek = ["Chủ Nhật", "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7"];
+      const dayName = daysOfWeek[d.getDay()];
+
+      if (hiddenInput) hiddenInput.value = val;
+      if (displayInput) displayInput.value = `${dayName}, ngày ${dd}/${mm}/${yyyy}`;
+      if (badgeText) badgeText.innerText = `${dayName}, ${dd}/${mm}`;
+    }
+
+    // Nút Đặt lại ở đáy lịch: đưa về ngày hôm nay
+    function resetCalendarDate() {
+      const today = new Date();
+      selectedInterviewDate = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+      currentCalDate = new Date(today.getFullYear(), today.getMonth(), 1);
+      renderCalendar();
+      applySelectedDate(selectedInterviewDate);
+    }
+
+    // Chọn nhanh 1 chạm (0: Hôm nay, 1: Ngày mai, 2: Ngày kia)
+    function selectQuickDay(offset) {
+      const d = new Date();
+      d.setDate(d.getDate() + offset);
+      selectedInterviewDate = new Date(d.getFullYear(), d.getMonth(), d.getDate());
+      applySelectedDate(selectedInterviewDate);
+    }
 
     // Xử lý chọn công ty qua Chip nút bấm
     function selectCompanyChip(val) {
@@ -1985,20 +2521,33 @@
 
     // Xử lý bộ chọn giờ 24h
     function set24hTime(h, m) {
-      document.getElementById("interviewHour").value = h;
-      document.getElementById("interviewMinute").value = m;
+      const hourEl = document.getElementById("interviewHour");
+      const minEl = document.getElementById("interviewMinute");
+      if (hourEl) hourEl.value = h;
+      if (minEl) minEl.value = m;
       updateTimeSelection();
     }
 
     function updateTimeSelection() {
-      const h = document.getElementById("interviewHour").value;
-      const m = document.getElementById("interviewMinute").value;
-      document.getElementById("timeBadgeText").innerText = `${h}:${m}`;
+      const hourEl = document.getElementById("interviewHour");
+      const minEl = document.getElementById("interviewMinute");
+      const h = hourEl ? hourEl.value : "08";
+      const m = minEl ? minEl.value : "00";
+
+      const hourDisplay = document.getElementById("hourDisplayVal");
+      const minuteDisplay = document.getElementById("minuteDisplayVal");
+      const badgeText = document.getElementById("timeBadgeText");
+
+      if (hourDisplay) hourDisplay.innerText = `${h}:00`;
+      if (minuteDisplay) minuteDisplay.innerText = m;
+      if (badgeText) badgeText.innerText = `${h}:${m}`;
     }
 
     function getSelected24hTime() {
-      const h = document.getElementById("interviewHour").value;
-      const m = document.getElementById("interviewMinute").value;
+      const hourEl = document.getElementById("interviewHour");
+      const minEl = document.getElementById("interviewMinute");
+      const h = hourEl ? hourEl.value : "08";
+      const m = minEl ? minEl.value : "00";
       return `${h}:${m}`;
     }
 
@@ -2079,6 +2628,7 @@
       document.getElementById("recruitmentForm").reset();
       updateActiveChip("");
       set24hTime("08", "00");
+      initCalendar();
     }
 
     // Tự động hiện thanh dính đáy trên mobile chỉ khi người dùng cuộn qua khỏi Hero
